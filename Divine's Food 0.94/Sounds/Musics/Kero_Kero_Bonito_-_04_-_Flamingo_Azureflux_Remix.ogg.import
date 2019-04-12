@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Kero_Kero_Bonito_-_04_-_Flamingo_Azureflux_Remix.ogg-f0c3d6028733ba9d4e43c630c9a524bc.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Musics/Kero_Kero_Bonito_-_04_-_Flamingo_Azureflux_Remix.ogg"
+source_md5="f9d13b34fa6620b80e03652378a1c599"
+
+dest_files=[ "res://.import/Kero_Kero_Bonito_-_04_-_Flamingo_Azureflux_Remix.ogg-f0c3d6028733ba9d4e43c630c9a524bc.oggstr" ]
+dest_md5="fd3ea2bec7e06e6a23ddabb272e379ac"
+
+[params]
+
+loop=true
+loop_offset=0

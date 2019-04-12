@@ -1,0 +1,107 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Explosion.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Animations/Inimigo/InimigoParado.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Animations/Inimigo/inimigo00.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Animations/Inimigo/inimigo01.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Animations/Inimigo/inimigo02.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Animations/Inimigo/inimigo03.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Animations/AngrySign/AngrySign_00.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Animations/AngrySign/AngrySign_01.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Animations/AngrySign/AngrySign_02.png" type="Texture" id=10]
+[ext_resource path="res://Sounds/SFX/Hey_scream.wav" type="AudioStream" id=11]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 19.1193, 33.3664 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Angry",
+"speed": 10.0
+} ]
+
+[node name="Enemy" type="Area2D" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+explosion = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="1"]
+
+frames = SubResource( 2 )
+animation = "Run"
+
+[node name="AngrySprite" type="AnimatedSprite" parent="." index="2"]
+
+position = Vector2( 0, -30 )
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 3 )
+animation = "default"
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="PistolaTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = false
+autostart = false
+
+[node name="Scream" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 11 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]
+
+[connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
+
+[connection signal="timeout" from="PistolaTimer" to="." method="_on_PistolaTimer_timeout"]
+
+

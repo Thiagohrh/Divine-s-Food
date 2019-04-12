@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/Animations/SpotedBarAnimation/SinalizadorBaixo_00.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Animations/SpotedBarAnimation/SinalizadorBaixo_01.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Animations/SpotedBarAnimation/SinalizadorBaixo_02.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Animations/SpotedBarAnimation/SinalizadorBaixo_03.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "SpotedBar",
+"speed": 5.0
+} ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" index="0"]
+
+position = Vector2( 641.325, 693.774 )
+scale = Vector2( 0.667146, 0.308159 )
+frames = SubResource( 1 )
+animation = "SpotedBar"
+frame = 2
+
+

@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/PlayerGun.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/red ball.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 1.80726
+
+[node name="PlayerGun" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+ps_projectile = null
+
+[node name="Collider" type="CollisionShape2D" parent="." index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+visible = false
+scale = Vector2( 0.075, 0.075 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ProjectileContainer" type="Node" parent="." index="2"]
+
+[node name="FireRateTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="FireRateTimer" to="." method="_on_FireRateTimer_timeout"]
+
+

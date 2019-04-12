@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scripts/Client.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Animations/Cliente/ClientsMove_00/ClientAnimDown_00.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Animations/Cliente/ClientsMove_00/ClientAnimDown_01.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Animations/Cliente/ClientsMove_00/ClientAnimDown_02.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Animations/Cliente/ClientsMove_01/ClientAnimUp_01.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Animations/Cliente/ClientsMove_01/ClientAnimUp_02.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Animations/Cliente/ClientsMove_01/ClientAnimUp_03.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Animations/Cliente/ClientsMove_01/ClientAnimUp_04).png" type="Texture" id=8]
+[ext_resource path="res://Sprites/client.png" type="Texture" id=9]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 16.3421
+height = 9.04042
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "ClientDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "ClientUp",
+"speed": 5.0
+} ]
+
+[node name="Client" type="Area2D" index="0"]
+
+position = Vector2( 0.243032, -5.75495 )
+scale = Vector2( 0.743209, 0.758073 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+
+[node name="Collider" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( -3.08653, -0.522756 )
+scale = Vector2( 2.38539, 2.35213 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( -3.17461, -0.682256 )
+scale = Vector2( 0.795575, 0.820073 )
+frames = SubResource( 2 )
+animation = "ClientDown"
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+
+visible = false
+position = Vector2( -2.05453, 0.0420456 )
+scale = Vector2( 1.33252, 1.38515 )
+texture = ExtResource( 9 )
+hframes = 4
+_sections_unfolded = [ "Animation", "Material", "Offset", "Visibility" ]
+
+[node name="LifeTime" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
+
+[connection signal="area_entered" from="." to="." method="_on_Client_area_entered"]
+
+[connection signal="timeout" from="LifeTime" to="." method="_on_LifeTime_timeout"]
+
+

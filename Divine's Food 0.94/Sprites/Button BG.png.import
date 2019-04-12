@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Button BG.png-bb98293076f3341c1a3405ae267b756f.stex"
+
+[deps]
+
+source_file="res://Sprites/Button BG.png"
+source_md5="e37f566872c9a82bd3026d99b4ca20db"
+
+dest_files=[ "res://.import/Button BG.png-bb98293076f3341c1a3405ae267b756f.stex" ]
+dest_md5="314d14740a60f4e4dc12e9170d943f00"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/166418__quonux__scifi-shoot-or-bass.wav-b1c48327955021d172c6514ab1f9a429.sample"
+
+[deps]
+
+source_file="res://Sounds/SFX/166418__quonux__scifi-shoot-or-bass.wav"
+source_md5="9ee2910544b505711bb66a126968b93a"
+
+dest_files=[ "res://.import/166418__quonux__scifi-shoot-or-bass.wav-b1c48327955021d172c6514ab1f9a429.sample" ]
+dest_md5="8a6aae8df237ef9d85470d03bcb433f0"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

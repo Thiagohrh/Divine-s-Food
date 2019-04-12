@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/353546__maxmakessounds__success.wav-33a66a03aaba9ee1892b814bb2fd9f3d.sample"
+
+[deps]
+
+source_file="res://Sounds/SFX/353546__maxmakessounds__success.wav"
+source_md5="4e1da56f4fb99d52885cc013f4fa1857"
+
+dest_files=[ "res://.import/353546__maxmakessounds__success.wav-33a66a03aaba9ee1892b814bb2fd9f3d.sample" ]
+dest_md5="9bd41a7accc18c8baa74ca671090d6f5"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,198 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/MouseTarget.tscn" type="PackedScene" id=2]
+[ext_resource path="res://spriteFinal.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Animations/IdleAnimation/spriteShoot_00_00.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Animations/IdleAnimation/spriteShoot_00_01.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Animations/IdleAnimation/spriteShoot_00_02.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Animations/IdleAnimation/spriteShoot_00_03.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Animations/IdleAnimation/spriteShoot_00_04.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Animations/IdleAnimation/spriteShoot_00_05.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Animations/IdleAnimation/spriteShoot_00_06.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Animations/IdleAnimation/spriteShoot_00_07.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Animations/ShootAnimation/spriteShoot_03.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Animations/ShootAnimation/spriteShoot_02.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Animations/ShootAnimation/spriteShoot_05.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Animations/ShootAnimation/spriteShoot_01.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Animations/ShootAnimation/spriteShoot_04.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/PlayerGun.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/PlayerShot.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Sprites/smoke.png" type="Texture" id=19]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 9.0
+height = 15.0
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "IdleShots",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Shoot_03",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Shoot_02",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "Shoot_05",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "Shoot_01",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "Shoot_04",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="Gradient" id=3]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=4]
+
+flags = 4
+gradient = SubResource( 3 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=5]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 1
+emission_sphere_radius = 20.0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 90.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 1.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 0.03
+scale_random = 0.3
+color_ramp = SubResource( 4 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color" ]
+
+[node name="Player" type="KinematicBody2D"]
+
+position = Vector2( 0.313217, -0.379822 )
+scale = Vector2( 1.4503, 1.51207 )
+input_pickable = true
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable", "collision" ]
+arrowTarget = ExtResource( 2 )
+
+[node name="Collider" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( -0.627639, 17.8883 )
+scale = Vector2( 3.97643, 2.3975 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Pause", "Transform", "Visibility", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+visible = false
+position = Vector2( -0.610326, 4.76663 )
+scale = Vector2( 0.453047, 0.396615 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+
+position = Vector2( -0.610326, 4.76663 )
+scale = Vector2( 0.453047, 0.396615 )
+frames = SubResource( 2 )
+animation = "IdleShots"
+
+[node name="PlayerGun" parent="." index="3" instance=ExtResource( 17 )]
+
+ps_projectile = ExtResource( 18 )
+
+[node name="GunPositionNode" type="Position2D" parent="." index="4"]
+
+editor/display_folded = true
+scale = Vector2( 0.780551, 0.316745 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BarrelPositionNode" type="Position2D" parent="GunPositionNode" index="0"]
+
+scale = Vector2( 0.295213, 0.795613 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ParticleSystem" type="Particles2D" parent="." index="5"]
+
+modulate = Color( 0.992157, 1, 0.443137, 1 )
+show_behind_parent = true
+position = Vector2( -1.85, 30 )
+emitting = true
+amount = 4
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 5 )
+texture = ExtResource( 19 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Visibility" ]
+
+[node name="StunTimer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="StunTimer" to="." method="_on_StunTimer_timeout"]
+
+

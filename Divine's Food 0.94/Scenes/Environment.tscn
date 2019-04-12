@@ -1,0 +1,192 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Sprites/untitled.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/BurguerQueenSprite.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/DivinesTileset00.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/McRonadlsSprite.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 360 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 640, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 90, 50 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 60, 50 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 90, 50 )
+
+[node name="Environment" type="Node"]
+
+[node name="Colliders" type="Node" parent="." index="0"]
+
+editor/display_folded = true
+
+[node name="Left" type="StaticBody2D" parent="Colliders" index="0"]
+
+editor/display_folded = true
+position = Vector2( 0, 360 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collider" type="CollisionShape2D" parent="Colliders/Left" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Right" type="StaticBody2D" parent="Colliders" index="1"]
+
+editor/display_folded = true
+position = Vector2( 1280, 360 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collider" type="CollisionShape2D" parent="Colliders/Right" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Top" type="StaticBody2D" parent="Colliders" index="2"]
+
+editor/display_folded = true
+position = Vector2( 640, 0 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collider" type="CollisionShape2D" parent="Colliders/Top" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="Down" type="StaticBody2D" parent="Colliders" index="3"]
+
+editor/display_folded = true
+position = Vector2( 640, 720 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collider" type="CollisionShape2D" parent="Colliders/Down" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="BurgerQueen" type="StaticBody2D" parent="Colliders" index="4"]
+
+editor/display_folded = true
+position = Vector2( 150, 60 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Collider" type="CollisionShape2D" parent="Colliders/BurgerQueen" index="0"]
+
+shape = SubResource( 3 )
+
+[node name="Divine's Food" type="StaticBody2D" parent="Colliders" index="5"]
+
+editor/display_folded = true
+position = Vector2( 640, 60 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Collider" type="CollisionShape2D" parent="Colliders/Divine's Food" index="0"]
+
+shape = SubResource( 4 )
+
+[node name="McRonald's" type="StaticBody2D" parent="Colliders" index="6"]
+
+editor/display_folded = true
+position = Vector2( 1130, 70 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Collider" type="CollisionShape2D" parent="Colliders/McRonald's" index="0"]
+
+position = Vector2( 0, -10 )
+shape = SubResource( 5 )
+
+[node name="Background" type="Sprite" parent="." index="1"]
+
+position = Vector2( 639.667, 359 )
+scale = Vector2( 0.66632, 0.562305 )
+texture = ExtResource( 1 )
+
+[node name="BurgerQueen" type="Sprite" parent="." index="2"]
+
+position = Vector2( 153.242, 115.128 )
+scale = Vector2( 2.27219, 2.12451 )
+texture = ExtResource( 2 )
+
+[node name="Divine's Food" type="Sprite" parent="." index="3"]
+
+position = Vector2( 640, 40 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="McRonald's" type="Sprite" parent="." index="4"]
+
+position = Vector2( 1124.6, 119.136 )
+scale = Vector2( 2.56004, 2.59407 )
+texture = ExtResource( 4 )
+
+

@@ -1,0 +1,253 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scripts/GameManager.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Client.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Environment.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/EnemyManager.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/ClientManager.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/SpotedUi.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sounds/SFX/353546__maxmakessounds__success.wav" type="AudioStream" id=10]
+[ext_resource path="res://Scripts/Shaker.gd" type="Script" id=11]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 90, 560, 0, 0, 31.5875, -39.71, 130, 470, 0, 0, -8.1225, -46.0275, 160, 410, 0, 0, 29.7825, -51.4425, 160, 350, 0, 0, -54.15, -11.7325, 140, 310, 0, 0, 0, 0, 110, 260, 0, 0, 0, 0, 150, 189.84 )
+}
+
+[sub_resource type="Curve2D" id=2]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 780, 570, 0, 0, 44.2225, -50.54, 840, 520, 0, 0, -37.905, -12.635, 800, 440, 46.0275, 35.1975, -13.5375, -28.88, 720, 420, 0, 0, 19.855, -54.15, 720, 350, 0, 0, 0, 0, 830, 320, 0, 0, 23.465, -27.9775, 900, 300, 0, 0, 0, 0, 880, 260, 0, 0, 0, 0, 830, 230, 0, 0, 0, 0, 845.005, 151.807 )
+}
+
+[sub_resource type="Curve2D" id=4]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1665.88, 407.479, 0, 0, -81.8389, 75.1582, 1400.32, 392.448, 0, 0, -18.372, -70.1477, 1208.25, 344.013, 0, 0, -76.8284, -78.4986, 1099.69, 287.226, 0, 0, 0, 0, 1138.1, 176.994 )
+}
+
+[sub_resource type="Curve2D" id=5]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -390.114, 460.925, 0, 0, 168.688, 38.4142, -183.011, 460.925, 0, 0, 0, 0, 67.5161, 444.224, 0, 0, 58.4564, -51.7757, 212.822, 315.62, 0, 0, 0, 0, 206.141, 192.026, 0, 0, 0, 0, 157.706, 126.889 )
+}
+
+[sub_resource type="Curve2D" id=6]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 643.729, 891.832, 0, 0, 0, 0, 642.059, 631.284, 0, 0, 258.878, -60.1266, 727.238, 212.068, 0, 0, 173.699, 65.1371, 942.692, 385.767, 0, 0, 0, 0, 1118.06, 313.949, 0, 0, 0, 0, 1139.77, 176.994 )
+}
+
+[sub_resource type="Curve2D" id=7]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1239.98, 851.748, 0, 0, 0, 0, 817.428, 663.017, 0, 0, -100.211, -252.198, 252.906, 419.171, 0, 0, 0, 0, 556.88, 203.717, 0, 0, 163.678, 45.0949, 1002.82, 283.886, 0, 0, 0, 0, 1138.1, 160.292 )
+}
+
+[sub_resource type="Curve2D" id=8]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -228.106, 686.4, 0, 0, 113.572, -36.744, 251.236, 534.413, 0, 0, -100.211, -257.208, 384.851, 282.216, 0, 0, 0, 0, 480.051, -63.512, 0, 0, 151.987, -15.0316, 745.61, -91.9051, 0, 0, 156.997, 126.934, 884.235, 146.931, 0, 0, -217.124, 140.295, 546.858, 571.157, 0, 0, 0, 0, 242.885, 450.904, 0, 0, 0, 0, 154.366, 120.208 )
+}
+
+[sub_resource type="Curve2D" id=9]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 875.884, -90.2349, 0, 0, 11.6913, 192.071, 845.821, 171.984, 0, 0, -267.229, 80.1688, 600.304, 482.638, 0, 0, 0, 0, 308.022, 419.171, 0, 0, 0, 0, 164.387, 121.878 )
+}
+
+[sub_resource type="Curve2D" id=3]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 440, 400, 0, 0, 14.44, -38.8075, 460, 360, 0, 0, 0, 0, 470, 310, 0, 0, -3.61, -27.075, 460, 270, 0, 0, 0, 0, 430, 240, -17.1475, 20.7575, 0, 0, 436.432, 192.719 )
+}
+
+[node name="Game" type="Node" index="0"]
+
+script = ExtResource( 1 )
+Client = ExtResource( 2 )
+
+[node name="Environment" parent="." index="0" instance=ExtResource( 3 )]
+
+[node name="HUD" parent="." index="1" instance=ExtResource( 4 )]
+
+[node name="Player" parent="." index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 639.07, 352.434 )
+
+[node name="EnemyManager" type="Node" parent="." index="3"]
+
+script = ExtResource( 6 )
+Enemy = ExtResource( 7 )
+
+[node name="EnemySpawnPoints" type="Node" parent="EnemyManager" index="0"]
+
+[node name="Spawn1" type="Position2D" parent="EnemyManager/EnemySpawnPoints" index="0"]
+
+position = Vector2( 370.806, 791.354 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Spawn2" type="Position2D" parent="EnemyManager/EnemySpawnPoints" index="1"]
+
+position = Vector2( 924, 791.354 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Spawn3" type="Position2D" parent="EnemyManager/EnemySpawnPoints" index="2"]
+
+position = Vector2( -108.529, 211.028 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Spawn4" type="Position2D" parent="EnemyManager/EnemySpawnPoints" index="3"]
+
+position = Vector2( -104.007, 526.062 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="EnemyTimer" type="Timer" parent="EnemyManager" index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="ClientManager" type="Node" parent="." index="4"]
+
+script = ExtResource( 8 )
+Client = ExtResource( 2 )
+SpotedBar = ExtResource( 9 )
+spawn_rate = 2
+spawn_rand_margin = 3
+
+[node name="PathHolder" type="Node" parent="." index="5"]
+
+[node name="Left" type="Path2D" parent="PathHolder" index="0"]
+
+position = Vector2( 0, -225.961 )
+scale = Vector2( 1, 1.76971 )
+curve = SubResource( 1 )
+
+[node name="Right" type="Path2D" parent="PathHolder" index="1"]
+
+position = Vector2( 284.995, -142.099 )
+scale = Vector2( 1, 1.59478 )
+curve = SubResource( 2 )
+
+[node name="Path2D" type="Path2D" parent="PathHolder" index="2"]
+
+curve = SubResource( 4 )
+
+[node name="Path2D2" type="Path2D" parent="PathHolder" index="3"]
+
+curve = SubResource( 5 )
+
+[node name="Path2D3" type="Path2D" parent="PathHolder" index="4"]
+
+curve = SubResource( 6 )
+
+[node name="Path2D4" type="Path2D" parent="PathHolder" index="5"]
+
+curve = SubResource( 7 )
+
+[node name="Path2D5" type="Path2D" parent="PathHolder" index="6"]
+
+curve = SubResource( 8 )
+
+[node name="Path2D6" type="Path2D" parent="PathHolder" index="7"]
+
+curve = SubResource( 9 )
+
+[node name="Middle" type="Path2D" parent="PathHolder" index="8"]
+
+position = Vector2( 203.568, -294.121 )
+scale = Vector2( 1, 2.04506 )
+curve = SubResource( 3 )
+
+[node name="Timers" type="Node" parent="." index="6"]
+
+[node name="MatchTimer" type="Timer" parent="Timers" index="0"]
+
+process_mode = 1
+wait_time = 60.0
+one_shot = true
+autostart = false
+
+[node name="ScoreUpdaterTimer" type="Timer" parent="Timers" index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[node name="ClientSpawnTimer" type="Timer" parent="Timers" index="2"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
+
+[node name="SoundEffects" type="Node" parent="." index="7"]
+
+editor/display_folded = true
+
+[node name="GameOver" type="AudioStreamPlayer" parent="SoundEffects" index="0"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Camera2D" type="Camera2D" parent="." index="8"]
+
+position = Vector2( 638, 358 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="Shaker" type="Node" parent="Camera2D" index="0"]
+
+script = ExtResource( 11 )
+
+[connection signal="start_game" from="HUD" to="." method="_on_HUD_start_game"]
+
+[connection signal="timeout" from="EnemyManager/EnemyTimer" to="EnemyManager" method="_on_EnemyTimer_timeout"]
+
+[connection signal="timeout" from="Timers/MatchTimer" to="." method="_on_MatchTimer_timeout"]
+
+[connection signal="timeout" from="Timers/ScoreUpdaterTimer" to="." method="_on_ScoreUpdaterTimer_timeout"]
+
+[connection signal="timeout" from="Timers/ClientSpawnTimer" to="ClientManager" method="_on_ClientSpawnTimer_timeout"]
+
+

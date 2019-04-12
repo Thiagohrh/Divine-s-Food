@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/CustomFollow2DPlugin/Follow.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/red ball.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.7841
+
+[node name="Follow" type="PathFollow2D" index="0"]
+
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = false
+lookahead = 4.0
+script = ExtResource( 1 )
+running_speed = 250
+
+[node name="FollowArea" type="Area2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FollowArea" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+visible = false
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Position2D" type="Position2D" parent="." index="2"]
+
+[node name="LifeTime" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
+
+[connection signal="area_entered" from="FollowArea" to="." method="_on_FollowArea_area_entered"]
+
+[connection signal="timeout" from="LifeTime" to="." method="_on_LifeTime_timeout"]
+
+

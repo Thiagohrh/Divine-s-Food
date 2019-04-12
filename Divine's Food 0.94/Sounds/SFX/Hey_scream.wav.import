@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hey_scream.wav-34a12fc9a1b742949013ec742aa78309.sample"
+
+[deps]
+
+source_file="res://Sounds/SFX/Hey_scream.wav"
+source_md5="b4af3e641f83ec89215491e8bf40a6b7"
+
+dest_files=[ "res://.import/Hey_scream.wav-34a12fc9a1b742949013ec742aa78309.sample" ]
+dest_md5="1b60dc3889766fb63a067b0c958f43b2"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

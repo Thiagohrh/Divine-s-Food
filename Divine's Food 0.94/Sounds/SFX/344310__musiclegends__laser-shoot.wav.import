@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/344310__musiclegends__laser-shoot.wav-5e83f4fac0d30b1208a07192d535d886.sample"
+
+[deps]
+
+source_file="res://Sounds/SFX/344310__musiclegends__laser-shoot.wav"
+source_md5="6454848a2db57e18b7216da4ed809916"
+
+dest_files=[ "res://.import/344310__musiclegends__laser-shoot.wav-5e83f4fac0d30b1208a07192d535d886.sample" ]
+dest_md5="bb37324534175b471a1a5d8b32acfe91"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

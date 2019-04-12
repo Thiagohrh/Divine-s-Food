@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/SpotedUi.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Animations/SpotedBarAnimation/SinalizadorBaixo_00.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Animations/SpotedBarAnimation/SinalizadorBaixo_01.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Animations/SpotedBarAnimation/SinalizadorBaixo_02.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Animations/SpotedBarAnimation/SinalizadorBaixo_03.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "SpotedAnim",
+"speed": 5.0
+} ]
+
+[node name="Spoted" type="Node2D" index="0"]
+
+position = Vector2( 634.065, 677.001 )
+scale = Vector2( 0.697977, 0.53988 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpotedSprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "SpotedAnim"
+frame = 2
+
+[connection signal="animation_finished" from="SpotedSprite" to="." method="_on_SpotedSprite_animation_finished"]
+
+
